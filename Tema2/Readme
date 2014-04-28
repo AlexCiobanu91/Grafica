@@ -1,0 +1,127 @@
+Elemente de Grafica pe Calculator - Tema 2
+Crazy Driver
+Ciobanu Alexandru-Catalin 333CA
+
+Cuprins
+1.Cerinta
+2.Utilizare
+3.Implementare
+4.Testare
+5.Probleme Aparute
+6.Continutul Arhivei
+7.Functionalitati
+
+
+1. Cerinta
+
+Tema a presupus implementarea unui un joc 3D wireframe de curse auto cu obstacole,
+intr-o varianta simplificata, utilizand concepte de baza din OpenGL
+
+
+2. Utilizare
+
+Programul se ruleaza normal fara a primi vreun parametru in linia de comanda
+
+2.1 Fisiere
+
+Programul nu primeste nici comenzi din linia de comanda, nici fisier de input.
+
+2.3 Input Tastatura
+
+Taste :
+[Up]
+accelereaza masina pe directia in fata (-z)
+[Left]
+roteste masina spre stanga si o translateaza pe -x
+[Right]
+roteste masina spre dreapta si o translateaza pe x
+[F1]
+schimba intre modul FullScreen si window
+[F2]
+reinitializeaza nivelul in cazul in care am pierdut
+sau porneste un niel nou daca l-mam castigat pe precedentul
+[EXIT]
+inchide executia programului
+
+3. Implementare
+NEAPARAT : Platforma pe care ati realizat tema: IDE, compilator, sistem de operare folosit.
+Orice framework (e.g OpenMPI, Java Swing) folosit
+Orice biblioteca de care are nevoie tema si s-ar putea sa nu fie preinstalata pe alte sisteme.
+Algoritmi folositi
+Coliziunile dintre nave le-am implementat cu distanta euclidiana si un bounding circle.
+Colizunea dintre arma jucatorului si o nava inamic are loc doar daca punctul din centrul inamicului
+trece prin dreptunghiul ce margineste arma.
+
+Tema a fost implementata in Visual Studio 2012, pe un sistem de operare Windows 7,
+utilizand frameworkul pus la dispozitie la laborator.
+Nu am utilizat framework-ul de laborator si m-am folosit doar de functiile deja existente in OpenGl si GLUT
+pe langa fisierele initiale am creat doua clase noi, care definesc jucatorul, inamicii si peisajul.
+Peisajul reprezinta toate obiectele in afara de jucator, inamici si bonusuri
+3.1 Schema Generala
+
+deschidere aplicatie
+initializarea tutoror obiectelor
+asteptarea inputului de la tastatura
+verificara coliziunilor intre jucator si inamici sau jucator si bonus
+in cazul coliziunii masinii cu un inamic se face update la numarul de coliziuni ramase
+La terminarae numarului de coliziuni se afiseaza mesajul ciorespunzator
+La fel si pentru terminarea unui nivel
+Jocul poate fi resetat in cazul in care jucatorul nu mai arei ncercari prin apasara tastei F2
+3.4 Evenimente
+
+Programul nu prezinta evenimente cum ar fi cititul sau scrisul in fisier
+ 
+4. Testare
+NEAPARAT : Explicati pe ce platforma ati testat tema si in ce conditii. Acolo unde se aplica, introduceti date de test (daca nu v-a fost interzis asta in mod explicit prin enunt). Daca ati folosit generatoare pentru teste, includeti-le si pe ele.
+Explicati ce scenarii de test ati aplicat
+Explicati ce scenarii de test NU ati aplicat (e.g la o aplicatie client/server puteti mentiona ca ati testat pentru 3 clienti, dar nu stiti cum se comporta aplicatia pentru 10)
+Dati cateva exemple de testare, daca se aplica, de exemplu comenzi in linia de comanda sau fisiere de intrare
+
+Tema a fost testata pe un sistem WIndows 7 cu un procesor intel i5, 6 GB Ram si o placa video integrata de 64 mb.
+Programul merge la un framerate normal.
+Pentru un drum de 40000 de unitati de masura aplicatia incepe sa frameze
+
+5. Probleme aparute
+Explicati :
+
+In ceea ce priveste enuntul nu am intalnit nicio problema, am
+inteles usor ceea ce trebuia sa fac.
+Am fost nevoit sa schimb implementarea funciilor de inout de la tastatura
+pentru a putea a apasa mai multe taste odata, actiune ce nu era posibila cu
+implementarea anterioara
+
+6. Continutul Arhivei
+NEAPARAT : O lista cu toate fisierele din arhiva temei, si motivatia fiecarui fisier, de exemplu :
+
+main.cpp
+sursa principala a aplicatiei
+player.h
+fisier header pentru functiile jucatorului
+enemy.h
+fisier header pentru functiile inamicilor
+environment.h
+fisier header pentru functiile peisajului
+player.cpp
+implementarea clasei player
+enemy.cpp
+implementarea clasei enemy
+environment.cpp
+implementarea clasei environment
+Readme
+acest fisier
+
+fisierele corespunzatoare solutiei Visual Studio
+
+Daca includeti in arhiva solutii visual studio, eclipse, netbeans, etc, ati specificat la punctul 3. versiunile acestor IDE-uri, iar aici veti descrie doar fisierele pe care le considerati importante( in principal sursele si fisierele intrare/iesire)
+
+7. Functionalitati
+O lista cu toate functionalitatile pe care le ofera tema. Mentionati motivele alegerii acestor functionalitati si oferiti un scurt rezumat acolo unde credeti ca este cazul.
+Exemplu:
+
+Functionalitati Standard (ca in enunt)
+
+Functionalitati Bonus:
+Se pot apasa mai multe taste in acelasi timp
+Am implementat mai multe nivele in care se modifica distanta de parcurs
+Un bonus care atunci cand e colectat mareste viteza maxima
+Generarea dinamica a peisajului
