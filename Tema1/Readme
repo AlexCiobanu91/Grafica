@@ -1,0 +1,129 @@
+Elemente de Grafica pe Calculator - Tema 1
+Geometry Wars
+Ciobanu Alexandru-Catalin 323CA
+
+Cuprins
+1.Cerinta
+2.Utilizare
+3.Implementare
+4.Testare
+5.Probleme Aparute
+6.Continutul Arhivei
+7.Functionalitati
+
+
+1. Cerinta
+
+Tema a presupus implementarea unui joc de tiput Geometry Wars intr-un spatiu 
+bidimensional, in care jucatorul prin intermediul tastaurii misca o figura 
+geomtrica, cu scopul de a distruge alte figuri geometrice ("inamici"). 
+Distrugerea acestora are loc prin coliziunea lor cu arma jucatorului ("Burghiu"),
+moment in care inamicii dispar si jucatorul primeste un anumit punctaj.
+De asemenea, jucatorul poate pierde vieti prin coliziunea corpului figurii 
+geometrice cu un inamic. Jocul se termina cand nu mai sunt inamici sau jucatorul
+nu mai are vieti 
+
+
+2. Utilizare
+
+Programul se ruleaza normal fara a primi vreun parametru in linia de comanda
+
+Explicati cum se ruleaza programul, daca are parametri de intrare, ce se vrea la acesti parametri, etc
+Apoi treceti in revista toate interfetele folosite
+Ar putea fi de exemplu ceva de genul :
+
+2.1 Fisiere
+
+Programul nu primeste nici comenzi din linia de comanda, nici fisier de input.
+
+
+2.3 Input Tastatura
+
+Taste :
+[Up]
+misca nava pe ecran cu viteza stabilita in sursa
+[Left]
+roteste nava spre stanga
+[Right]
+roteste nava spre dreapta
+[Space]
+activeaza arma jucatorului
+[EXIT]
+inchide executia programului
+
+3. Implementare
+NEAPARAT : Platforma pe care ati realizat tema: IDE, compilator, sistem de operare folosit.
+Orice framework (e.g OpenMPI, Java Swing) folosit
+Orice biblioteca de care are nevoie tema si s-ar putea sa nu fie preinstalata pe alte sisteme.
+Algoritmi folositi
+Coliziunile dintre nave le-am implementat cu distanta euclidiana si un bounding circle.
+Colizunea dintre arma jucatorului si o nava inamic are loc doar daca punctul din centrul inamicului
+trece prin dreptunghiul ce margineste arma.
+
+
+Tema a fost implementata in Visual Studio 2012, pe un sistem de operare Windows 7,
+utilizand frameworkul pus la dispozitie la laborator.
+pe langa fisierele initiale am creat doua clase noi, care definesc jucatorul si inamicul.
+Astfel un jucator va fi reprezentat printr-un obiect de tip Player iar inamicii sunt un vector de Enemy.
+
+3.1 Schema Generala
+
+deschidere aplicatie
+initializarea tutoror obiectelor
+asteptarea inputlui de la tastatura
+verificara coliziunilor intre diferite figuri
+in cazul coliziunii navei cu un inamic se face update la numarul de vieti
+in cazul coliziunii armei cu un inamic se face update la scor
+terminare aplicatie cand jucatorul nu mai are vieti
+
+3.4 Evenimente
+
+Programul nu prezinta evenimente cum ar fi cititul sau scrisul in fisier
+ 
+4. Testare
+NEAPARAT : Explicati pe ce platforma ati testat tema si in ce conditii. Acolo unde se aplica, introduceti date de test (daca nu v-a fost interzis asta in mod explicit prin enunt). Daca ati folosit generatoare pentru teste, includeti-le si pe ele.
+Explicati ce scenarii de test ati aplicat
+Explicati ce scenarii de test NU ati aplicat (e.g la o aplicatie client/server puteti mentiona ca ati testat pentru 3 clienti, dar nu stiti cum se comporta aplicatia pentru 10)
+Dati cateva exemple de testare, daca se aplica, de exemplu comenzi in linia de comanda sau fisiere de intrare
+
+Tema a fost testata pe un sistem WIndows 7 cu un procesor intel i5, 6 GB Ram si o placa video integrata de 64 mb.
+Programul merge la un framerate normal pana la un numar de 150 de inamici 
+
+5. Probleme aparute
+Explicati :
+
+In ceea ce priveste enuntul nu am intalnit nicio problema, am
+inteles usor ceea ce trebuia sa fac.
+Am fost nevoit sa schimb implementarea funciilor de inout de la tastatura
+pentru a putea a apasa mai multe taste odata, actiune ce nu era posibila cu
+implementarea anterioara
+
+6. Continutul Arhivei
+NEAPARAT : O lista cu toate fisierele din arhiva temei, si motivatia fiecarui fisier, de exemplu :
+
+main.cpp
+sursa principala a aplicatiei
+player.h
+fisier header pentru functiile jucatorului
+enemy.h
+fisier header pentru functiile inamicilor
+player.cpp
+implementarea clasei player
+enemy.cpp
+implementarea clasei enemy
+Readme
+acest fisier
+
+framework--ul pus la dispozitie la laborator
+fisierele corespunztoare solutiei Visual Studio
+
+Daca includeti in arhiva solutii visual studio, eclipse, netbeans, etc, ati specificat la punctul 3. versiunile acestor IDE-uri, iar aici veti descrie doar fisierele pe care le considerati importante( in principal sursele si fisierele intrare/iesire)
+
+7. Functionalitati
+O lista cu toate functionalitatile pe care le ofera tema. Mentionati motivele alegerii acestor functionalitati si oferiti un scurt rezumat acolo unde credeti ca este cazul.
+Exemplu:
+
+Functionalitati Standard (ca in enunt)
+
+Functionalitati Bonus:
+Se pot apasa mai multe taste in acelasi timp
