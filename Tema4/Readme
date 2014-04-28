@@ -1,0 +1,87 @@
+Elemente de Grafica pe Calculator - Tema 4
+Sleeping Beauty
+Ciobanu Alexandru-Catalin 333CA
+
+Cuprins
+1.Cerinta
+2.Utilizare
+3.Implementare
+4.Testare
+5.Probleme Aparute
+6.Continutul Arhivei
+7.Functionalitati
+
+
+1. Cerinta
+
+Tema a presupus implementarea unui unui sitem de animatie a unei fete bazata pe interpolarea intre 
+diferite stari, si a unui sistem de particule sincronizat cu animatiile fetei.
+
+2. Utilizare
+Programul se ruleaza normal fara a primi vreun parametru in linia de comanda
+2.1 Fisiere
+Programul nu primeste nici comenzi din linia de comanda, nici fisier de input.
+2.3 Input Tastatura
+
+Taste :
+[F1]
+schimba intre modul FullScreen si window
+
+Pentru controlul camerei globala tastele folosite sunt afisate 
+in consola la initializarea programului
+
+[EXIT]
+inchide executia programului
+3. Implementare
+NEAPARAT : Platforma pe care ati realizat tema: IDE, compilator, sistem de operare folosit.
+Orice framework (e.g OpenMPI, Java Swing) folosit
+Orice biblioteca de care are nevoie tema si s-ar putea sa nu fie preinstalata pe alte sisteme.
+Algoritmi folositi
+
+Tema a fost implementata in Visual Studio 2012, pe un sistem de operare Windows 7,
+utilizand frameworkul pus la dispozitie la laborator.
+
+3.1 Schema Generala
+
+deschidere aplicatie
+initializarea tutoror obiectelor
+Efectuare animatie fata
+La schimbarea intre sleep si surprise se activeaza sistemul de particule
+La schimbarea intre anoyed si sleep se dezactiveaza sistemul de particule
+Procesul continua nedefinit, programul se termina cand este inchis de utilizator
+3.4 Evenimente
+Programul nu prezinta evenimente cum ar fi cititul sau scrisul in fisier
+ 
+4. Testare
+NEAPARAT : Explicati pe ce platforma ati testat tema si in ce conditii. Acolo unde se aplica, introduceti date de test (daca nu v-a fost interzis asta in mod explicit prin enunt). Daca ati folosit generatoare pentru teste, includeti-le si pe ele.
+Explicati ce scenarii de test ati aplicat
+Explicati ce scenarii de test NU ati aplicat (e.g la o aplicatie client/server puteti mentiona ca ati testat pentru 3 clienti, dar nu stiti cum se comporta aplicatia pentru 10)
+Dati cateva exemple de testare, daca se aplica, de exemplu comenzi in linia de comanda sau fisiere de intrare
+
+Tema a fost testata pe un sistem WIndows 7 cu un procesor intel i5, 6 GB Ram si o placa video integrata de 64 mb.
+Programul merge la un framerate normal, pentru un numar de 100 de particule.
+Pentru un numar mai mare de 500 de particule , programul incepe sa frameze.
+
+5. Probleme aparute
+Explicati :
+
+In ceea ce priveste enuntul nu am intalnit nicio problema, am
+inteles usor ceea ce trebuia sa fac.
+Am fost nevoit sa modific shaderele si modalitatea de transmitere a variabilelor catre acestea,
+deoarece placa mea grafica (Inte HD 3000 generatia a 2-a) nu suporta versiune de shader mai mare
+de 1.4. Astfel toate shaderele au fost modificate la acesata verisiune
+
+
+6. Continutul Arhivei
+NEAPARAT : O lista cu toate fisierele din arhiva temei, si motivatia fiecarui fisier, de exemplu :
+
+main.cpp
+sursa principala a aplicatiei
+Readme
+acest fisier
+fisierele corespunzatoare solutiei Visual Studio si fisierele din laborator.
+7. Functionalitati
+O lista cu toate functionalitatile pe care le ofera tema. Mentionati motivele alegerii acestor functionalitati si oferiti un scurt rezumat acolo unde credeti ca este cazul.
+Exemplu:
+
+Functionalitati Standard (ca in enunt)
